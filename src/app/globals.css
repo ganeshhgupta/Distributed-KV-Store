@@ -1,0 +1,151 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  background-color: #131921;
+  color: #FFFFFF;
+  font-family: Inter, system-ui, sans-serif;
+}
+
+/* ─── Landing page animations ─── */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeInLeft {
+  from { opacity: 0; transform: translateX(-24px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes fadeInRight {
+  from { opacity: 0; transform: translateX(24px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes fadeOut {
+  from { opacity: 1; }
+  to   { opacity: 0; }
+}
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.6); }
+  to   { opacity: 1; transform: scale(1); }
+}
+@keyframes glowPulse {
+  0%, 100% { box-shadow: 0 0 18px rgba(255,153,0,0.25), 0 0 40px rgba(255,153,0,0.08); }
+  50%       { box-shadow: 0 0 36px rgba(255,153,0,0.55), 0 0 70px rgba(255,153,0,0.20); }
+}
+@keyframes glowPulseGreen {
+  0%, 100% { box-shadow: 0 0 14px rgba(6,125,98,0.3); }
+  50%       { box-shadow: 0 0 30px rgba(6,125,98,0.7); }
+}
+@keyframes glowPulseBlue {
+  0%, 100% { box-shadow: 0 0 14px rgba(99,179,237,0.3); }
+  50%       { box-shadow: 0 0 30px rgba(99,179,237,0.7); }
+}
+@keyframes dashFlow {
+  to { stroke-dashoffset: -60; }
+}
+@keyframes packetMove1 {
+  0%   { offset-distance: 0%;   opacity: 0; }
+  8%   { opacity: 1; }
+  92%  { opacity: 1; }
+  100% { offset-distance: 100%; opacity: 0; }
+}
+@keyframes packetMove2 {
+  0%   { offset-distance: 0%;   opacity: 0; }
+  8%   { opacity: 1; }
+  92%  { opacity: 1; }
+  100% { offset-distance: 100%; opacity: 0; }
+}
+@keyframes nodeFloat {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-6px); }
+}
+@keyframes ping-slow {
+  0%   { transform: scale(1);   opacity: 0.6; }
+  80%, 100% { transform: scale(2.2); opacity: 0; }
+}
+@keyframes borderAccent {
+  0%, 100% { border-color: rgba(255,153,0,0.4); }
+  50%       { border-color: rgba(255,153,0,0.9); }
+}
+@keyframes gradientShift {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+@keyframes typewriter {
+  from { width: 0; }
+  to   { width: 100%; }
+}
+@keyframes blink {
+  50% { opacity: 0; }
+}
+
+/* ─── Utility classes ─── */
+.animate-fade-in-up   { animation: fadeInUp  0.7s ease both; }
+.animate-fade-in-left { animation: fadeInLeft 0.7s ease both; }
+.animate-fade-in-right{ animation: fadeInRight 0.7s ease both; }
+.animate-fade-in      { animation: fadeIn    0.6s ease both; }
+.animate-fade-out     { animation: fadeOut   0.5s ease forwards; }
+.animate-scale-in     { animation: scaleIn   0.6s cubic-bezier(0.34,1.56,0.64,1) both; }
+.animate-glow-pulse   { animation: glowPulse 2.4s ease-in-out infinite; }
+.animate-glow-green   { animation: glowPulseGreen 2.2s ease-in-out infinite; }
+.animate-glow-blue    { animation: glowPulseBlue  2.6s ease-in-out infinite; }
+.animate-float        { animation: nodeFloat 3.5s ease-in-out infinite; }
+.animate-border-accent{ animation: borderAccent 2s ease-in-out infinite; }
+
+/* delay helpers */
+.delay-100 { animation-delay: 100ms; }
+.delay-200 { animation-delay: 200ms; }
+.delay-300 { animation-delay: 300ms; }
+.delay-400 { animation-delay: 400ms; }
+.delay-500 { animation-delay: 500ms; }
+.delay-600 { animation-delay: 600ms; }
+.delay-700 { animation-delay: 700ms; }
+.delay-800 { animation-delay: 800ms; }
+.delay-900 { animation-delay: 900ms; }
+.delay-1000{ animation-delay: 1000ms; }
+.delay-1200{ animation-delay: 1200ms; }
+
+/* gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, #FF9900 0%, #FFB74D 50%, #FF9900 100%);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradientShift 4s ease infinite;
+}
+.gradient-text-cool {
+  background: linear-gradient(135deg, #63b3ed 0%, #a78bfa 50%, #63b3ed 100%);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradientShift 5s ease infinite;
+}
+
+/* ping ring */
+.ping-ring::after {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  border: 2px solid currentColor;
+  animation: ping-slow 2s cubic-bezier(0,0,0.2,1) infinite;
+}
+
+/* ─── App-level fade-in ─── */
+@keyframes pulse-border {
+  0%, 100% { border-color: #E74C3C; opacity: 1; }
+  50%       { border-color: #E74C3C; opacity: 0.5; }
+}
+
+/* page content fade-in after landing transition */
+.page-enter {
+  animation: fadeIn 0.5s ease both;
+}
