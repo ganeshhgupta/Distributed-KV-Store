@@ -1,0 +1,19 @@
+{
+  "/_not-found/page": "app/_not-found/page.js",
+  "/api/nodes/route": "app/api/nodes/route.js",
+  "/api/kv/route": "app/api/kv/route.js",
+  "/api/nodes/[id]/route": "app/api/nodes/[id]/route.js",
+  "/api/partition/route": "app/api/partition/route.js",
+  "/api/traces/route": "app/api/traces/route.js",
+  "/api/wal/route": "app/api/wal/route.js",
+  "/api/replicate/route": "app/api/replicate/route.js",
+  "/api/wal/replay/route": "app/api/wal/replay/route.js",
+  "/replication/page": "app/replication/page.js",
+  "/partitions/page": "app/partitions/page.js",
+  "/operations/page": "app/operations/page.js",
+  "/tracing/page": "app/tracing/page.js",
+  "/wal/page": "app/wal/page.js",
+  "/page": "app/page.js",
+  "/dashboard/page": "app/dashboard/page.js",
+  "/nodes/page": "app/nodes/page.js"
+}

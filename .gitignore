@@ -10,3 +10,11 @@ dist/
 
 .vercel
 package-lock.json
+
+# allow pre-built standalone
+!.next/
+!.next/standalone/
+!.next/standalone/**
+!.next/static/
+!.next/static/**
+.next/cache
