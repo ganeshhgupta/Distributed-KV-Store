@@ -1,0 +1,13 @@
+.next
+node_modules
+.env.local
+.env
+*.log
+.git
+.gitignore
+drizzle/
+.vercel/
+dist/
+.DS_Store
+render-deploy.json
+render-docker.json
