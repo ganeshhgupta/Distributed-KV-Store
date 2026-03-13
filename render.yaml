@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: distributed-kv-store
+    runtime: node
+    plan: free
+    region: oregon
+    branch: master
+    buildCommand: npm install --legacy-peer-deps && npm run build
+    startCommand: node_modules/.bin/next start -p $PORT
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: NODE_OPTIONS
+        value: --max-old-space-size=460
+      - key: NEON_DATABASE_URL
+        sync: false

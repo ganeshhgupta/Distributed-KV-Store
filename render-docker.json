@@ -1,0 +1,31 @@
+{
+  "type": "web_service",
+  "name": "distributed-kv-store",
+  "ownerId": "tea-d6pj6hhaae7s738t1dm0",
+  "repo": "https://github.com/ganeshhgupta/Distributed-KV-Store",
+  "branch": "master",
+  "autoDeploy": "yes",
+  "serviceDetails": {
+    "env": "docker",
+    "plan": "free",
+    "region": "oregon",
+    "numInstances": 1,
+    "pullRequestPreviewsEnabled": "no",
+    "dockerContext": ".",
+    "dockerfilePath": "./Dockerfile"
+  },
+  "envVars": [
+    {
+      "key": "NEON_DATABASE_URL",
+      "value": "postgresql://neondb_owner:npg_ZDC3BkJVw6mI@ep-royal-bread-ad1q9ndl-pooler.c-2.us-east-1.aws.neon.tech/neondb?sslmode=require&channel_binding=require"
+    },
+    {
+      "key": "NODE_ENV",
+      "value": "production"
+    },
+    {
+      "key": "PORT",
+      "value": "3000"
+    }
+  ]
+}
